@@ -10,16 +10,16 @@ dotenv.config();
 // 2. Connect to Database
 connectDB();
 
+const app = express();
+
+// 3. Middleware (Allows us to accept JSON data)
+app.use(cors());
+app.use(express.json());
+
 const authRoutes = require('./routes/auth');
 const postRoutes = require('./routes/posts');
 const chatRoutes = require('./routes/chat');
 const moodRoutes = require('./routes/moods');
-
-const app = express();
-
-// 3. Middleware (Allows us to accept JSON data)
-app.use(express.json());
-app.use(cors());
 
 //routes
 app.use('/api/auth', authRoutes);
