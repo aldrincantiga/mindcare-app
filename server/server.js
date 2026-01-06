@@ -14,7 +14,7 @@ const app = express();
 
 // 3. Middleware (Allows us to accept JSON data)
 app.use(cors());
-app.use(express.json());
+app.use(express.json());// Fix json parser
 
 const authRoutes = require('./routes/auth');
 const postRoutes = require('./routes/posts');
